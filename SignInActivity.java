@@ -1,4 +1,4 @@
-package com.monstertechno.loginuidesign2;
+package com.dos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.signin_activity);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
@@ -41,13 +41,15 @@ public class MainActivity extends AppCompatActivity{
         signin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Sign In Button Clicked",Toast.LENGTH_LONG).show();
+                Toast.makeText(SignInActivity.this,"Sign In Button Clicked",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(SignInActivity.this,MainActivity.class);
+                startActivity(i);
             }
         });
         signup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,SignUpActivity.class);
+                Intent i = new Intent(SignIncActivity.this,SignUpActivity.class);
                 startActivity(i);
             }
         });
